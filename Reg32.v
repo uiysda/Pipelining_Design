@@ -4,11 +4,11 @@
 	
 	Input Port
 		1. clk
-		2. rst: ­«¸m°T¸¹
-		3. en_reg: ±±¨î¼È¦s¾¹¬O§_¥i¼g¤J
-		4. d_in: ±ı¼g¤Jªº¼È¦s¾¹¸ê®Æ
+		2. rst: é‡ç½®è¨Šè™Ÿ
+		3. en_reg: æ§åˆ¶æš«å­˜å™¨æ˜¯å¦å¯å¯«å…¥
+		4. d_in: æ¬²å¯«å…¥çš„æš«å­˜å™¨è³‡æ–™
 	Output Port
-		1. d_out: ©ÒÅª¨úªº¼È¦s¾¹¸ê®Æ
+		1. d_out: æ‰€è®€å–çš„æš«å­˜å™¨è³‡æ–™
 */
 
 `timescale 1ns/1ns
@@ -30,10 +30,22 @@ module Reg32 ( Clk, Rst, En_Reg, D_In, D_Out );
 
     end
 
-    else if ( en_reg )
+    else 
     begin
+	    
+      if ( en_reg )
+      begin
 
-      D_Out <= D_In;
+        D_Out <= D_In;
+
+      end
+
+      else
+      begin
+
+        D_Out <= D_Out;
+
+      end
 
     end
 
