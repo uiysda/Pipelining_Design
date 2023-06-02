@@ -1,8 +1,16 @@
-endmodule
+/*
+  Ctl : 3 bits operations
+  // add : 
+  // or  :
+  // add :
+  // sub :
+  // slt :
+  // srl :
+*/
 
 `timescale 1ns/1ns
 
-module ALU( Ctl, shamt, DataA, DataB, DataOut ) ;
+module ALU( Ctl , shamt, DataA, DataB, DataOut ) ;
   
   input  [2:0]  Ctl ;
   input  [4:0]  shamt ;  
