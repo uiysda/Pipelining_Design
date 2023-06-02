@@ -13,9 +13,9 @@
 
 `timescale 1ns/1ns
 
-module PC ( Clk, Rst, En_Reg, D_In, D_Out );
+module PC ( Clk, Rst, Stall, D_In, D_Out );
 
-  input             Clk, Rst, En_Reg;
+  input             Clk, Rst, Stall;
   input      [31:0] D_In;
   output reg [31:0] D_Out;
 
@@ -33,7 +33,7 @@ module PC ( Clk, Rst, En_Reg, D_In, D_Out );
     else 
     begin
 	    
-      if ( En_Reg )
+      if ( Stall )
       begin
 
         D_Out <= D_In;
