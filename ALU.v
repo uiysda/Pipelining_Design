@@ -18,7 +18,7 @@ module ALU( dataA, dataB, Signal, reset, dataOut );
   parameter SLT = 6'b101010;
 
   // if Signal is sub set carry in = 1
-  assign cin = ( Signal == SUB ) ? 1'b1 : 1'b0;  
+  assign cin = ( Signal == SUB  || Signal == SLT ) ? 1'b1 : 1'b0;  
 
   // combine 1 bit ALU one by one to get 32 bits ALU
   ALU_1bit alu0( .dataA( dataA[0] ), .dataB( dataB[0] ), .Signal( Signal ), .cin( cin ), .dataOut( temp[0] ), .cout( cout[0] ) );
