@@ -64,6 +64,6 @@ module ALU( Ctl , shamt, DataA, DataB, DataOut ) ;
   
   assign sltAns = aluAns[31] ? 32'b1 : 32'b0 ;
   
-  assign DataOut = ( Ctr == 3'b011 ) ? sltAns : ( Ctr == 3'b111 ) ? shiftAns : aluAns ;
+  assign DataOut = ( Ctl == 3'b011 ) ? sltAns : ( Ctl == 3'b111 ) ? shiftAns : aluAns ;
   
 endmodule
