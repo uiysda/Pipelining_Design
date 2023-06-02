@@ -8,7 +8,7 @@ module ALU_1bit( Sel, DataA, DataB, InvertB, Cin, DataOut, Cout ) ;
 
   output DataOut, Cout;
 
-  wire and00, or01, add10_sub11, tempB ;
+  wire and00, or01, add_sub10, tempB ;
 
   assign and00 = DataA & DataB ;
   
@@ -16,8 +16,8 @@ module ALU_1bit( Sel, DataA, DataB, InvertB, Cin, DataOut, Cout ) ;
   
   assign tempB = InvertB ^ DataB ;
   
-  FA fullAdder( .DataA( DataA ), .DataB( tempB ), .Cin( Cin ), .Sum( add10_sub11 ), .Cout( Cout ) ) ;
+  FA fullAdder( .DataA( DataA ), .DataB( tempB ), .Cin( Cin ), .Sum( add_sub10 ), .Cout( Cout ) ) ;
   
-  MUX_4to1 selectResult( .Sel( sel ), .DataIn0( and00 ), .DataIn1( or01 ), .DataIn2( add10_sub11 ), .DataIn3( add10_sub11 ), .DataOut( dataOut ) ) ;
+  MUX_4to1 selectResult( .Sel( sel ), .DataIn0( and00 ), .DataIn1( or01 ), .DataIn2( add_sub10 ), .DataIn3( add_sub10 ), .DataOut( dataOut ) ) ;
   
 endmodule
