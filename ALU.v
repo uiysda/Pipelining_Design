@@ -54,7 +54,7 @@ module ALU( Ctl, shamt, DataA, DataB, DataOut ) ;
   
   Shifter shifter( .DataA( dataA ), .Shamt( shamt ), .DataOut( shiftAns ) ) ;
   
-  assign sltAns = temp[31] ? 32'b1 : 32'b0 ;
+  assign sltAns = aluAns[31] ? 32'b1 : 32'b0 ;
   
   MUX_4to1 mux_4to1( .Sel( sel ), .DataIn0( aluAns ), .DataIn1( shiftAns ), .DataIn2( sltAns ), .DataIn3( 32'b0 ), .DataOut( DataOut ) );
   
