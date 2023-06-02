@@ -9,8 +9,6 @@ module Shifter( DataA, Shamt, DataOut );
 
   wire [31:0] temp0, temp1, temp2, temp3, temp4;
 
-  parameter SRL = 6'b000010;
-
   // if dataB[0] = 1 => shift right = 1
   MUX_2to1 MUX_2to1_temp0_0( .Sel( Shamt[0] ), .DataIn0( DataA[0] ), .DataIn1( DataA[1] ), .DataOut( temp0[0]  ) );
   MUX_2to1 MUX_2to1_temp0_0( .Sel( Shamt[0] ), .DataIn0( DataA[1] ), .DataIn1( DataA[2] ), .DataOut( temp0[1]  ) );
