@@ -1,0 +1,245 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Midterm_Project_Final_Version
+vALU
+Z1 !s100 5chkHR1L<JQ@1k0bg^BQd1
+Z2 IlDAoDm;0`@A<T5SiFPmP22
+Z3 V@R9AoI@jJcofB0>1bdlPz0
+Z4 dC:\Midterm_Project_Final_Version
+Z5 w1683866572
+Z6 8C:/Midterm_Project_Final_Version/ALU.v
+Z7 FC:/Midterm_Project_Final_Version/ALU.v
+L0 3
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/ALU.v|
+Z10 o-work work -O0
+Z11 n@a@l@u
+Z12 !s108 1685699266.296000
+Z13 !s107 C:/Midterm_Project_Final_Version/ALU.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALU_1bit
+Z14 !s100 Wok_8gIZzC<MaMBBdkfk20
+Z15 I7^7:h2bO^:3F5RM<UnQ<Q2
+Z16 V;U^fA`T`49ZJPe?YEbG@b0
+R4
+Z17 w1683559150
+Z18 8C:/Midterm_Project_Final_Version/ALU_1bit.v
+Z19 FC:/Midterm_Project_Final_Version/ALU_1bit.v
+L0 3
+R8
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/ALU_1bit.v|
+R10
+Z21 n@a@l@u_1bit
+Z22 !s108 1685699267.684000
+Z23 !s107 C:/Midterm_Project_Final_Version/ALU_1bit.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALUControl
+!i10b 1
+!s100 Rcz]a:Q4L>mH9z@RmGE>?1
+IVMY=RI`4]LP:i:K32ZjG=1
+Z24 VR=31:H89NBmWkahBX_F:L1
+R4
+w1685708466
+Z25 8C:/Midterm_Project_Final_Version/ALUControl.v
+Z26 FC:/Midterm_Project_Final_Version/ALUControl.v
+L0 3
+R8
+r1
+!s85 0
+31
+!s108 1685708466.825000
+!s107 C:/Midterm_Project_Final_Version/ALUControl.v|
+Z27 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/ALUControl.v|
+!s101 -O0
+R10
+Z28 n@a@l@u@control
+vFA
+Z29 !s100 UcoP462;`H]2BhPPFB0Ri3
+Z30 IG<:meEB>Z;MYPPa[]G0Fi2
+Z31 Vng[U7AcLhA:WDo:=:4bZ52
+R4
+Z32 w1683559078
+Z33 8C:/Midterm_Project_Final_Version/FA.v
+Z34 FC:/Midterm_Project_Final_Version/FA.v
+L0 3
+R8
+r1
+31
+Z35 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/FA.v|
+R10
+n@f@a
+Z36 !s108 1685699269.578000
+Z37 !s107 C:/Midterm_Project_Final_Version/FA.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vHiLo
+Z38 Iz>@n]fgjlL63>l?:FfYX`2
+Z39 V]zhRGm8QLTVb0@H6bA0MC1
+R4
+Z40 w1683555806
+Z41 8C:/Midterm_Project_Final_Version/HiLo.v
+Z42 FC:/Midterm_Project_Final_Version/HiLo.v
+L0 3
+R8
+r1
+31
+Z43 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/HiLo.v|
+R10
+Z44 n@hi@lo
+Z45 !s100 iIZdOgMG;;_P<SDTKe<J42
+Z46 !s108 1683557512.226000
+Z47 !s107 C:/Midterm_Project_Final_Version/HiLo.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMultiplier
+Z48 IPWE2C]n;PCYiNM1HcF??k1
+Z49 VoJh;4`P^m2Pco7c5=dloT3
+R4
+Z50 w1685707400
+Z51 8C:/Midterm_Project_Final_Version/Multiplier.v
+Z52 FC:/Midterm_Project_Final_Version/Multiplier.v
+L0 3
+R8
+r1
+31
+Z53 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/Multiplier.v|
+R10
+Z54 n@multiplier
+!i10b 1
+Z55 !s100 Y;@CVB:iWFAgY19j4a_Z41
+!s85 0
+Z56 !s108 1685707400.698000
+Z57 !s107 C:/Midterm_Project_Final_Version/Multiplier.v|
+!s101 -O0
+vMUX
+Z58 !s100 K4Q8JTeJ09Kfn?AzTnFL;2
+Z59 I<N`NeaM`:6MG4c=7ok5`:3
+Z60 VQ7;JLSUj>eD7@f:g;Y9S60
+R4
+Z61 w1683555407
+Z62 8C:/Midterm_Project_Final_Version/MUX.v
+Z63 FC:/Midterm_Project_Final_Version/MUX.v
+L0 3
+R8
+r1
+31
+Z64 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/MUX.v|
+R10
+Z65 n@m@u@x
+Z66 !s108 1683557512.301000
+Z67 !s107 C:/Midterm_Project_Final_Version/MUX.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX_2to1
+Z68 !s100 OXaJIfdTBX^?nJ[MHE4X12
+Z69 InlFbIDF1[XO<H@B2UO5@D1
+Z70 VCT`A60L]?LZ8Lbd631:A=3
+R4
+Z71 w1683552721
+Z72 8C:/Midterm_Project_Final_Version/MUX_2to1.v
+Z73 FC:/Midterm_Project_Final_Version/MUX_2to1.v
+L0 3
+R8
+r1
+31
+Z74 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/MUX_2to1.v|
+R10
+Z75 n@m@u@x_2to1
+Z76 !s108 1685699271.518000
+Z77 !s107 C:/Midterm_Project_Final_Version/MUX_2to1.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX_4to1
+Z78 I9^1XcT=6mzg1Y@Hha9Nae3
+Z79 V6H@_^_P;[9Z^l:T0z`lAF2
+R4
+Z80 w1685643908
+Z81 8C:/Midterm_Project_Final_Version/MUX_4to1.v
+Z82 FC:/Midterm_Project_Final_Version/MUX_4to1.v
+L0 3
+R8
+r1
+31
+R10
+Z83 n@m@u@x_4to1
+Z84 !s100 6EgBjhm<jSC]^K0hN^BoS3
+Z85 !s108 1685699273.248000
+Z86 !s107 C:/Midterm_Project_Final_Version/MUX_4to1.v|
+Z87 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/MUX_4to1.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vShifter
+Z88 !s100 f9VJDodISRc^;O;fXPN2U1
+Z89 Ic7dC7HZYeJ07b7_hYZ>lI0
+Z90 V[ik3778AXTTM`oYV?NK]H3
+R4
+Z91 w1683552524
+Z92 8C:/Midterm_Project_Final_Version/Shifter.v
+Z93 FC:/Midterm_Project_Final_Version/Shifter.v
+L0 3
+R8
+r1
+31
+Z94 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/Shifter.v|
+R10
+Z95 n@shifter
+Z96 !s108 1685699274.003000
+Z97 !s107 C:/Midterm_Project_Final_Version/Shifter.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtb_ALU
+Z98 !s100 4^zM8NBE6lc12z9fHfT^N0
+Z99 IR9I=6aWiDU54]dNZRR2X=1
+Z100 VJ;TnOjHFn3KbASFPGPEl41
+R4
+Z101 w1683218643
+Z102 8C:/Midterm_Project_Final_Version/tb_ALU.v
+Z103 FC:/Midterm_Project_Final_Version/tb_ALU.v
+L0 3
+R8
+r1
+31
+Z104 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/tb_ALU.v|
+R10
+Z105 ntb_@a@l@u
+Z106 !s108 1685699274.602000
+Z107 !s107 C:/Midterm_Project_Final_Version/tb_ALU.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vTotalALU
+Z108 IGkaNaC=7gPU4673AE^MYV0
+Z109 VO4W_g]QI1L[lLGAePek`o2
+R4
+Z110 w1685643969
+Z111 8C:/Midterm_Project_Final_Version/TotalALU.v
+Z112 FC:/Midterm_Project_Final_Version/TotalALU.v
+L0 3
+R8
+r1
+31
+Z113 !s90 -reportprogress|300|-work|work|C:/Midterm_Project_Final_Version/TotalALU.v|
+R10
+Z114 n@total@a@l@u
+Z115 !s100 CQ9@1dK2]_mdGOO?e=0UE1
+Z116 !s108 1685699275.733000
+Z117 !s107 C:/Midterm_Project_Final_Version/TotalALU.v|
+!i10b 1
+!s85 0
+!s101 -O0
