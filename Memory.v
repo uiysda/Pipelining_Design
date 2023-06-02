@@ -4,12 +4,12 @@
 	
 	Input Port
 		1. clk
-		2. MemRead: ±±¨î°O¾ĞÅé¬O§_¥iÅª¨ú
-		3. MemWrite: ±±¨î°O¾ĞÅé¬O§_¥i¼g¤J
-		4. wd: ¼g¤Jªº°O¾ĞÅé¸ê®Æ
-		5. addr: ±ı¦s¨úªº°O¾ĞÅé¦ì¸m
+		2. MemRead: æ§åˆ¶è¨˜æ†¶é«”æ˜¯å¦å¯è®€å–
+		3. MemWrite: æ§åˆ¶è¨˜æ†¶é«”æ˜¯å¦å¯å¯«å…¥
+		4. wd: å¯«å…¥çš„è¨˜æ†¶é«”è³‡æ–™
+		5. addr: æ¬²å­˜å–çš„è¨˜æ†¶é«”ä½ç½®
 	Output Port
-		1. rd: Åª¨úªº°O¾ĞÅé¸ê®Æ
+		1. rd: è®€å–çš„è¨˜æ†¶é«”è³‡æ–™
 */
 
 `timescale 1ns/1ns
@@ -23,9 +23,9 @@ module Memory( Clk, MemRead, MemWrite, Addr, Wd, Rd );
   // Memory size: 1KB.
   reg [7:0] mem_array [0:1023];
 	
-  // ¥H¤U¬°¦Ü«ü©w°O¾ĞÅé¦ì¸mÅª¨ú¸ê®Æ 
-  always @( MemRead or mem_array[addr] or mem_array[addr+1] or 
-            mem_array[addr+2] or mem_array[addr+3] ) 
+  // ä»¥ä¸‹ç‚ºè‡³æŒ‡å®šè¨˜æ†¶é«”ä½ç½®è®€å–è³‡æ–™ 
+  always @( MemRead or mem_array[Addr] or mem_array[Addr+1] or 
+            mem_array[Addr+2] or mem_array[Addr+3] ) 
   begin
 
     if ( MemRead == 1'b1 ) 
@@ -48,7 +48,7 @@ module Memory( Clk, MemRead, MemWrite, Addr, Wd, Rd );
 
   end
 	
-  // ¥H¤U±N¸ê®Æ¼g¤J«ü©w°O¾ĞÅé¦ì¸m
+  // ä»¥ä¸‹å°‡è³‡æ–™å¯«å…¥æŒ‡å®šè¨˜æ†¶é«”ä½ç½®
   always @( posedge Clk ) 
   begin
 
@@ -66,4 +66,3 @@ module Memory( Clk, MemRead, MemWrite, Addr, Wd, Rd );
   end
 	
 endmodule
-
