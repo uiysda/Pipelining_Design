@@ -1,11 +1,11 @@
 /*
   Ctl : 3 bits operations
-  // add : 
-  // or  :
-  // add :
-  // sub :
-  // slt :
-  // srl :
+  // add : 000
+  // or  : 001
+  // add : 010
+  // sub : 110
+  // slt : 011
+  // srl : 111
 */
 
 `timescale 1ns/1ns
@@ -64,6 +64,6 @@ module ALU( Ctl , shamt, DataA, DataB, DataOut ) ;
   
   assign sltAns = aluAns[31] ? 32'b1 : 32'b0 ;
   
-  MUX_4to1 mux_4to1( .Sel( sel ), .DataIn0( aluAns ), .DataIn1( shiftAns ), .DataIn2( sltAns ), .DataIn3( 32'b0 ), .DataOut( DataOut ) );
+  assign DataOut = ( Ctr == 3'b011 ) ? sltAns : ( Ctr == 3'b111 ) ? shiftAns : aluAns ;
   
 endmodule
