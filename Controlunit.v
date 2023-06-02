@@ -17,12 +17,13 @@
 
 `timescale 1ns/1ns
 
-module control_pipelined( Opcode, ControlUnitOut );
+module control_pipelined( Opcode, Branch, Jump, ControlUnitOut );
 
   input      [5:0] Opcode;
 
-  output reg [9:0] ControlUnitOut;
-  // ControlUnitOut = {RegDst, ALUOp, ALUSrc, Branch, Jump, MemRead, MemWrite, RegWrite, MemtoReg}
+  output reg       Branch, Jump;
+  output reg [7:0] ControlUnitOut;
+  // ControlUnitOut = {RegDst, ALUOp, ALUSrc, MemRead, MemWrite, RegWrite, MemtoReg}
   // no ExtendSel
 
   parameter R_FORMAT = 6'd0;
@@ -40,7 +41,9 @@ module control_pipelined( Opcode, ControlUnitOut );
       R_FORMAT : 
       begin
 
-        ControlUnitOut = 10'b1100000010;
+        Branch = 1'b0;
+        Jump = 1'b0;
+        ControlUnitOut = 10'b11000010;
         // ExtendSel = 1'b0
 
       end
@@ -48,7 +51,9 @@ module control_pipelined( Opcode, ControlUnitOut );
       ADDIU :
       begin
 
-        ControlUnitOut = 10'b0001000010;
+        Branch = 1'b0;
+        Jump = 1'b0;
+        ControlUnitOut = 10'b00010010;
         // ExtendSel = 1'b1
 
       end
@@ -56,7 +61,9 @@ module control_pipelined( Opcode, ControlUnitOut );
       LW :
       begin
 
-        ControlUnitOut = 10'b0001001011;
+        Branch = 1'b0;
+        Jump = 1'b0;
+        ControlUnitOut = 10'b00011011;
         // ExtendSel = 1'b1
 
       end
@@ -64,7 +71,9 @@ module control_pipelined( Opcode, ControlUnitOut );
       SW :
       begin
 
-        ControlUnitOut = 10'bx00100010x;
+        Branch = 1'b0;
+        Jump = 1'b0;
+        ControlUnitOut = 10'bx001010x;
         // ExtendSel = 1'b1
 
       end
@@ -72,7 +81,9 @@ module control_pipelined( Opcode, ControlUnitOut );
       BEQ :
       begin
 
-        ControlUnitOut = 10'bx01010000x;
+        Branch = 1'b1;
+        Jump = 1'b0;
+        ControlUnitOut = 10'bx010000x;
         // ExtendSel = 1'b1
 
       end
@@ -80,7 +91,9 @@ module control_pipelined( Opcode, ControlUnitOut );
       J :
       begin
 
-        ControlUnitOut = 10'bx01011000x;
+        Branch = 1'b1;
+        Jump = 1'b1;
+        ControlUnitOut = 10'bx010000x;
         // ExtendSel = 1'b1
 
       end
@@ -89,7 +102,9 @@ module control_pipelined( Opcode, ControlUnitOut );
       begin
 
         $display("control_single unimplemented opcode %d", opcode);
-        ControlUnitOut = 10'dx;
+        Branch = 1'bx;
+        Jump = 1'bx;
+        ControlUnitOut = 8'dx;
 
       end
 
