@@ -17,7 +17,7 @@
 
 `timescale 1ns/1ns
 
-module control_pipelined( Opcode, Branch, Jump, ControlUnitOut );
+module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
   input      [5:0] Opcode;
 
