@@ -13,7 +13,7 @@
 
 `timescale 1ns/1ns
 
-module Reg32 ( Clk, Rst, En_Reg, D_In, D_Out );
+module PC ( Clk, Rst, En_Reg, D_In, D_Out );
 
   input             Clk, Rst, En_Reg;
   input      [31:0] D_In;
@@ -33,7 +33,7 @@ module Reg32 ( Clk, Rst, En_Reg, D_In, D_Out );
     else 
     begin
 	    
-      if ( en_reg )
+      if ( En_Reg )
       begin
 
         D_Out <= D_In;
