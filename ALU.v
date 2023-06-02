@@ -9,7 +9,7 @@ module ALU( Signal, Reset, DataA, DataB, DataOut );
   output [31:0] DataOut;
   
   wire cin;
-  wire [31:0] cout, temp, shifterTemp;
+  wire [31:0] cout, temp;
 
   parameter AND = 6'b100100;
   parameter OR  = 6'b100101;
@@ -54,10 +54,8 @@ module ALU( Signal, Reset, DataA, DataB, DataOut );
   ALU_1bit alu29( .dataA( DataA[29] ), .dataB( DataB[29] ), .Signal( Signal ), .cin( cout[28] ), .dataOut( temp[29] ), .cout( cout[29] ) );
   ALU_1bit alu30( .dataA( DataA[30] ), .dataB( DataB[30] ), .Signal( Signal ), .cin( cout[29] ), .dataOut( temp[30] ), .cout( cout[30] ) );
   ALU_1bit alu31( .dataA( DataA[31] ), .dataB( DataB[31] ), .Signal( Signal ), .cin( cout[30] ), .dataOut( temp[31] ), .cout( cout[31] ) );
-
-  Shifter shifter( .Reset( Reset ), .Signal( Signal ), .DataA( DataA ), .DataB( DataB ), .DataOut( shifterTemp ) );
   
   // if reset = 1, reset the out
-  assign DataOut = reset ? 32'd0 : ( Signal == SLT ) ? ( temp[31] ? 1 : 0 ) : ( Signal == SRL ) ? shifterTemp : temp; 
+  assign DataOut = reset ? 32'd0 : ( Signal == SLT ) ? ( temp[31] ? 1 : 0 ) : temp; 
 
 endmodule
