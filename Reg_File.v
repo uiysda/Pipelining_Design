@@ -4,21 +4,21 @@
 	
 	Input Port
 		1. Clk
-		2. RegWrite: ±±¨î¼È¦s¾¹¬O§_¥i¼g¤J
-		3. RN1: rs±ıÅª¨úªº¼È¦s¾¹½s¸¹
-		4. RN2: rt±ıÅª¨úªº¼È¦s¾¹½s¸¹
-		5. WN: ±ı¼g¤Jªº¼È¦s¾¹½s¸¹
-		6. WD: ¼g¤J¼È¦s¾¹ªº¸ê®Æ
+		2. RegWrite: æ§åˆ¶æš«å­˜å™¨æ˜¯å¦å¯å¯«å…¥
+		3. RN1: rsæ¬²è®€å–çš„æš«å­˜å™¨ç·¨è™Ÿ
+		4. RN2: rtæ¬²è®€å–çš„æš«å­˜å™¨ç·¨è™Ÿ
+		5. WN: æ¬²å¯«å…¥çš„æš«å­˜å™¨ç·¨è™Ÿ
+		6. WD: å¯«å…¥æš«å­˜å™¨çš„è³‡æ–™
 	Output Port
-		1. RD1: rs¼È¦s¾¹©ÒÅª¨úªº¸ê®Æ
-		2. RD2: rt¼È¦s¾¹©ÒÅª¨úªº¸ê®Æ
+		1. RD1: rsæš«å­˜å™¨æ‰€è®€å–çš„è³‡æ–™
+		2. RD2: rtæš«å­˜å™¨æ‰€è®€å–çš„è³‡æ–™
 */
 
 `timescale 1ns/1ns
 
 module Reg_File( Clk, RegWrite, RN1, RN2, WN, WD, RD1, RD2 );
 
-  input             Clk,RegWrite;
+  input             Clk, RegWrite;
   input      [4:0]  RN1, RN2, WN;
   input      [31:0] WD;
 
