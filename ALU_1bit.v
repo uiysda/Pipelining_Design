@@ -18,6 +18,6 @@ module ALU_1bit( Sel, DataA, DataB, InvertB, Cin, DataOut, Cout ) ;
   
   FA fullAdder( .DataA( DataA ), .DataB( tempB ), .Cin( Cin ), .Sum( add_sub10 ), .Cout( Cout ) ) ;
   
-  MUX_4to1_1bit selectResult( .Sel( Sel ), .DataIn0( and00 ), .DataIn1( or01 ), .DataIn2( add_sub10 ), .DataIn3( add_sub10 ), .DataOut( DataOut ) ) ;
+  MUX_4to1 selectResult( .Sel( Sel ), .DataIn0( and00 ), .DataIn1( or01 ), .DataIn2( add_sub10 ), .DataIn3( add_sub10 ), .DataOut( DataOut ) ) ;
   
 endmodule
