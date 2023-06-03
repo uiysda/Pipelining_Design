@@ -8,7 +8,7 @@
 		1. ALUOperation: 最後解碼完成之指令
 */
 
-module alu_ctl( Clk, ALUOp, Funct, ALUOperation, MULTUOperation, Sel );
+module ALU_Control_Unit( Clk, ALUOp, Funct, ALUOperation, MULTUOperation, Sel );
   
   input       Clk;
   input [1:0] ALUOp;
