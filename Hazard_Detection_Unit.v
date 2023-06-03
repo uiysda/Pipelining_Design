@@ -5,7 +5,7 @@ module Hazard_Detection_Unit( Clk, MemRead_EX, Rs_ID, Rt_ID, Rt_EX, Stall );
   input       Clk, MemRead_EX;
   input [4:0] Rs_ID, Rt_ID, Rt_EX;
 
-  output      Stall ;
+  output reg  Stall ;
     
   always@( posedge Clk )
   begin  
