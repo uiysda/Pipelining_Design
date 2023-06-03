@@ -1,6 +1,6 @@
 # Pipelining_Design
 還沒測:
-ADD, 
+-ADD-, 
 ALU_1bit, 
 ALU_Control_Unit, 
 Hilo, 
