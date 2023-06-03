@@ -7,3 +7,8 @@ Hilo,
 Multiplier, 
 ~~MUX2to1~~, MUX4to1, 
 ~~Shifter~~
+測完了:
+Add
+HiLo
+MUX_2to1
+Shifter
