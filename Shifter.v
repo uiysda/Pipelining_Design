@@ -180,7 +180,7 @@ module Shifter( DataA, Shamt, DataOut );
   MUX_2to1 MUX_2to1_temp5_31( .Sel( Shamt[4] ), .DataIn0( temp3[31] ), .DataIn1( 1'b0 ), .DataOut( temp4[31]  ) );
   
   // if reset = 1 => reset data, else if Signal = SRL do shift right  
-  assign dataOut = temp4;
+  assign DataOut = temp4;
 
 endmodule
 
