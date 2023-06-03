@@ -11,9 +11,9 @@ module Hazard_Detection_Unit( Clk, MemRead_EX, Rs_ID, Rt_ID, Rt_EX, Stall );
   begin  
       
     if ( MemRead_EX && ( ( Rs_ID == Rt_EX ) || ( Rt_ID == Rt_EX ) ) )
-      Stall = 1b'1;
+      Stall = 1'b1;
     else
-      Stall = 1b'0;
+      Stall = 1'b0;
       
   end
     
