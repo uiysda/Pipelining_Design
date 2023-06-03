@@ -27,6 +27,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
   // no ExtendSel
 
   parameter R_FORMAT = 6'd0;
+  parameter MADDU = 6'd28;
   parameter ADDIU = 6'd9;
   parameter LW = 6'd35;
   parameter SW = 6'd43;
@@ -43,9 +44,19 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
-        ControlUnitOut = 10'b11000010;
+        ControlUnitOut = 8'b11000010;
         // ExtendSel = 1'b0
 
+      end
+
+      MADDU :
+      begin
+	
+	Branch = 1'b0;
+	Jump = 1'b0;
+	ControlUnitOut = 8'b11000010;
+	// ExtendSel = 1'b0;
+	      
       end
 
       ADDIU :
@@ -53,7 +64,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
-        ControlUnitOut = 10'b00010010;
+        ControlUnitOut = 8'b00010010;
         // ExtendSel = 1'b1
 
       end
@@ -63,7 +74,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
-        ControlUnitOut = 10'b00011011;
+        ControlUnitOut = 8'b00011011;
         // ExtendSel = 1'b1
 
       end
@@ -73,7 +84,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
-        ControlUnitOut = 10'bx001010x;
+        ControlUnitOut = 8'bx001010x;
         // ExtendSel = 1'b1
 
       end
@@ -83,7 +94,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b1;
         Jump = 1'b0;
-        ControlUnitOut = 10'bx010000x;
+        ControlUnitOut = 8'bx010000x;
         // ExtendSel = 1'b1
 
       end
@@ -93,7 +104,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b1;
         Jump = 1'b1;
-        ControlUnitOut = 10'bx010000x;
+        ControlUnitOut = 8'bx010000x;
         // ExtendSel = 1'b1
 
       end
