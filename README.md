@@ -2,7 +2,6 @@
 ALU ;
 ALU_1bit ;
 ALU_Control_Unit ;
-Control_Unit ;
 Forwarding_Unit ;
 Hazard_Detection_Unit ;
 UnSign_Extend ;
@@ -10,6 +9,7 @@ UnSign_Extend ;
 已測:
 Add ;
 Beq_unit ;
+Control_Unit ;
 EX_MEM ;
 FA ;
 HiLo ;
