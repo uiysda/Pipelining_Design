@@ -2,6 +2,7 @@
 Add
 Beq_unit
 HiLo
+IF_ID
 MEM_WB
 MUX_2to1
 MUX_4to1
