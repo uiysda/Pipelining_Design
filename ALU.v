@@ -62,7 +62,7 @@ module ALU( Ctl , Shamt, DataA, DataB, DataOut ) ;
   
   Shifter shifter( .DataA( DataA ), .Shamt( Shamt ), .DataOut( shiftAns ) ) ;
   
-  assign sltAns = aluAns[31] ? 32'b1 : 32'b0 ;
+  assign sltAns = carry[31] ? 32'b0 : 32'b1 ;
   
   assign DataOut = ( Ctl == 3'b111 ) ? sltAns : ( Ctl == 3'b011 ) ? shiftAns : aluAns ;
   
