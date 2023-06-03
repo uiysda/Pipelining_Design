@@ -5,5 +5,5 @@ ALU_1bit,
 ALU_Control_Unit, 
 Hilo, 
 Multiplier, 
-MUX2to1, MUX4to1, 
-Shifter
+~~MUX2to1~~, MUX4to1, 
+~~Shifter~~
