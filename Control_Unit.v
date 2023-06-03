@@ -17,11 +17,11 @@
 
 `timescale 1ns/1ns
 
-module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
+module Control_Unit( Opcode, Branch, Jump, ExtendSel, ControlUnitOut );
 
   input      [5:0] Opcode;
 
-  output reg       Branch, Jump;
+  output reg       Branch, Jump, ExtendSel;
   output reg [7:0] ControlUnitOut;
   // ControlUnitOut = {RegDst, ALUOp, ALUSrc, MemRead, MemWrite, RegWrite, MemtoReg}
   // no ExtendSel
@@ -44,8 +44,8 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
+        ExtendSel = 1'b0;	      
         ControlUnitOut = 8'b11000010;
-        // ExtendSel = 1'b0
 
       end
 
@@ -54,8 +54,8 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 	
 	Branch = 1'b0;
 	Jump = 1'b0;
+	ExtendSel = 1'b0;	      
 	ControlUnitOut = 8'b11000010;
-	// ExtendSel = 1'b0;
 	      
       end
 
@@ -64,8 +64,8 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
+        ExtendSel = 1'b1;	      
         ControlUnitOut = 8'b00010010;
-        // ExtendSel = 1'b1
 
       end
 
@@ -74,8 +74,8 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
+        ExtendSel = 1'b1;	      
         ControlUnitOut = 8'b00011011;
-        // ExtendSel = 1'b1
 
       end
 
@@ -84,8 +84,9 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b0;
         Jump = 1'b0;
+        ExtendSel = 1'b1;	      
         ControlUnitOut = 8'bx001010x;
-        // ExtendSel = 1'b1
+
 
       end
 
@@ -94,8 +95,8 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b1;
         Jump = 1'b0;
+        ExtendSel = 1'b1;	      
         ControlUnitOut = 8'bx010000x;
-        // ExtendSel = 1'b1
 
       end
 
@@ -104,8 +105,8 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
 
         Branch = 1'b1;
         Jump = 1'b1;
+        ExtendSel = 1'b1;	      
         ControlUnitOut = 8'bx010000x;
-        // ExtendSel = 1'b1
 
       end
 
@@ -115,6 +116,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
         $display("control_single unimplemented opcode %d", Opcode);
         Branch = 1'bx;
         Jump = 1'bx;
+        ExtendSel = 1'bx;
         ControlUnitOut = 8'dx;
 
       end
