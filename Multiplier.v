@@ -1,35 +1,35 @@
 `timescale 1ns/1ns
 
-module Multiplier( clk, dataA, dataB, Signal, dataOut, reset );
+module Multiplier( Clk, DataA, DataB, Signal, DataOut, Reset );
 
-  input clk ;
-  input reset ;
-  input [31:0] dataA ;
-  input [31:0] dataB ;
+  input Clk ;
+  input Reset ;
+  input [31:0] DataA ;
+  input [31:0] DataB ;
   input [5:0] Signal ;
 
-  output [63:0] dataOut ;
+  output [63:0] DataOut ;
 
   //   Signal ( 6-bits)?
   //   MULTU  : 25
   parameter MULTU = 6'b011001;
   parameter OUT = 6'b111111;
-  // ©w¸q¦UºØ°T¸¹
+  // å®šç¾©å„ç¨®è¨Šè™Ÿ
 
   reg [31:0] MPY ;
   reg [63:0] MCND ;
   reg [63:0] PROD ;
   reg [63:0] temp ;
 
-  always@( posedge clk or Signal )
+  always@( posedge Clk or Signal )
   begin
     case ( Signal )
 
       MULTU:
       begin
       
-        MPY <= dataB;
-        MCND <= { 32'b0, dataA };
+        MPY <= DataB;
+        MCND <= { 32'b0, DataA };
         PROD <= 32'b0;
       
       end
@@ -45,15 +45,15 @@ module Multiplier( clk, dataA, dataB, Signal, dataOut, reset );
   
   end
   
-  always@( posedge clk or reset )
+  always@( posedge Clk or Reset )
   begin
 
-    if ( reset )
+    if ( Reset )
     begin
       temp <= 32'b0 ;
     end
     /*
-    reset°T¸¹ ¦pªG¬Oreset´N°µÂk0
+    Resetè¨Šè™Ÿ å¦‚æœæ˜¯Resetå°±åšæ­¸0
     */
 
     else
@@ -84,7 +84,7 @@ module Multiplier( clk, dataA, dataB, Signal, dataOut, reset );
         end
         
         OUT:
-	  // ¦pªG°T¸¹¬O OUT ¥Nªí¤w¸g­¼§¹¤F ­n¿é¥Xµ²ªG 
+	  // å¦‚æœè¨Šè™Ÿæ˜¯ OUT ä»£è¡¨å·²ç¶“ä¹˜å®Œäº† è¦è¼¸å‡ºçµæœ 
         begin
 
           temp <= PROD ;
@@ -97,6 +97,6 @@ module Multiplier( clk, dataA, dataB, Signal, dataOut, reset );
     
   end
 
-  assign dataOut = temp ;
+  assign DataOut = temp ;
 
 endmodule
