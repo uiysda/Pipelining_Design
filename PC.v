@@ -33,7 +33,7 @@ module PC ( Clk, Rst, Stall, D_In, D_Out );
     else 
     begin
 	    
-	    if ( !Stall )
+      if ( Stall )
       begin
 
         D_Out <= D_Out;
