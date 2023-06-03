@@ -1,25 +1,25 @@
 待測:
-ALU
-ALU_1bit
-ALU_Control_Unit
-Control_Unit
-Forwarding_Unit
-Hazard_Detection_Unit
-UnSign_Extend
+ALU ;
+ALU_1bit ;
+ALU_Control_Unit ;
+Control_Unit ;
+Forwarding_Unit ;
+Hazard_Detection_Unit ;
+UnSign_Extend ;
 
 已測:
-Add
-Beq_unit
-EX_MEM
-FA
-HiLo
-ID_EX
-IF_ID
-MEM_WB
-MUX_2to1
-MUX_4to1
-Memory
-Multipler
-Reg_File
-Shifter
-Sign_Extend
+Add ;
+Beq_unit ;
+EX_MEM ;
+FA ;
+HiLo ;
+ID_EX ;
+IF_ID ;
+MEM_WB ;
+MUX_2to1 ;
+MUX_4to1 ;
+Memory ;
+Multipler ;
+Reg_File ;
+Shifter ;
+Sign_Extend ;
