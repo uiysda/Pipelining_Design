@@ -2,6 +2,7 @@
 ALU_Control_Unit ;
 Forwarding_Unit ;
 Hazard_Detection_Unit ;
+Mips_Pipelined ;
 
 已測:
 ALU ;
@@ -20,6 +21,7 @@ MUX_4to1 ;
 MUX_4to1_1bit ;
 Memory ;
 Multipler ;
+PC ;
 Reg_File ;
 Shifter ;
 Sign_Extend ;
