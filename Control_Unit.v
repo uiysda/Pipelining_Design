@@ -4,7 +4,7 @@
 	
 	Input Port
 		1. opcode: 輸入的指令代號，據此產生對應的控制訊號
-	Input Port
+	Output Port
 		1. RegDst: 控制RFMUX
 		2. ALUSrc: 控制ALUMUX
 		3. MemtoReg: 控制WRMUX
