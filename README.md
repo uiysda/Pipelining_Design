@@ -15,6 +15,7 @@ MEM_WB
 Add
 Beq_unit
 HiLo
+MEM_WB
 MUX_2to1
 MUX_4to1
 Memory
