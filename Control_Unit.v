@@ -112,7 +112,7 @@ module Control_Unit( Opcode, Branch, Jump, ControlUnitOut );
       default
       begin
 
-        $display("control_single unimplemented opcode %d", opcode);
+        $display("control_single unimplemented opcode %d", Opcode);
         Branch = 1'bx;
         Jump = 1'bx;
         ControlUnitOut = 8'dx;
