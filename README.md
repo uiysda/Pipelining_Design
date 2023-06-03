@@ -1,10 +1,10 @@
 待測:
-ALU ;
 ALU_Control_Unit ;
 Forwarding_Unit ;
 Hazard_Detection_Unit ;
 
 已測:
+ALU ;
 ALU_1bit ;
 Add ;
 Beq_unit ;
