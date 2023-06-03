@@ -1,8 +1,7 @@
 `timescale 1ns/1ns
 
 module ID_EX( Clk, Rst, Rs_ID, Rt_ID, Rd_ID, Shamt_ID, Funct_ID, ControlUnitOut_ID, RD1_ID, RD2_ID, Ext_Immed_ID,
-              RegDst_EX, ALUSrc_EX, MemRead_EX, MemWrite_EX, RegWrite_EX, MemtoReg_EX ,ALUOp_EX,
-              Rs_EX, Rt_EX, Rd_EX, Shamt_EX, Funct_EX, RD1_EX, RD2_EX, Ext_Immed_EX );
+              WB_EX, MEM_EX, EX_EX,Rs_EX, Rt_EX, Rd_EX, Shamt_EX, Funct_EX, RD1_EX, RD2_EX, Ext_Immed_EX );
 
   input             Clk, Rst;
   input      [4:0]  Rs_ID, Rt_ID, Rd_ID;
