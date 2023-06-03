@@ -4,7 +4,6 @@ ALU_1bit ;
 ALU_Control_Unit ;
 Forwarding_Unit ;
 Hazard_Detection_Unit ;
-UnSign_Extend ;
 
 已測:
 Add ;
@@ -23,3 +22,4 @@ Multipler ;
 Reg_File ;
 Shifter ;
 Sign_Extend ;
+UnSign_Extend ;
