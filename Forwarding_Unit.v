@@ -1,33 +1,31 @@
 `timescale 1ns/1ns
 
-module Forwarding_Unit(
-    input ex_mem_reg_write,
-    input [4:0] ex_mem_write_reg_addr, // EX MEM Register Rd
-    input [4:0] id_ex_instr_rs, 
-    input [4:0] id_ex_instr_rt,
-    input mem_wb_reg_write,
-    input [4:0] mem_wb_write_reg_addr,  // Mem WB Register Rd
-    output reg [1:0] Forward_A,
-    output reg [1:0] Forward_B
-    );
-    
-    always @(*)
-    begin
-        // initializations
-        Forward_A = 2'b00; 
-        Forward_B = 2'b00;
-        if(ex_mem_reg_write && (ex_mem_write_reg_addr != 5'b0) && (ex_mem_write_reg_addr == id_ex_instr_rs))
-            Forward_A = 2'b10;
-        else if(mem_wb_reg_write && (mem_wb_write_reg_addr != 5'b0) && !(ex_mem_reg_write && (ex_mem_write_reg_addr != 0) && (ex_mem_write_reg_addr == id_ex_instr_rs)) && (mem_wb_write_reg_addr == id_ex_instr_rs))
-             Forward_A = 2'b01;
-       // else if(mem_wb_reg_write && (mem_wb_write_reg_addr != 5'b0) && (mem_wb_write_reg_addr == id_ex_instr_rs))    
-             //Forward_A = 2'b01;     
-        if(ex_mem_reg_write && (ex_mem_write_reg_addr != 5'b0) && (ex_mem_write_reg_addr == id_ex_instr_rt))
-            Forward_B = 2'b10;
-        else if(mem_wb_reg_write && (mem_wb_write_reg_addr != 5'b0) && !(ex_mem_reg_write && (ex_mem_write_reg_addr != 0) && (ex_mem_write_reg_addr == id_ex_instr_rt)) && (mem_wb_write_reg_addr == id_ex_instr_rt))
-            Forward_B = 2'b01;
-       // else if(mem_wb_reg_write && (mem_wb_write_reg_addr != 5'b0) && (mem_wb_write_reg_addr == id_ex_instr_rt))    
-           // Forward_B = 2'b01;
+module Forwarding_Unit( RegWrite_EX_MEM, RegWrite_MEM_WB, Rs_ID_EX, Rt_ID_EX, Rd_EX_MEM, Rd_MEM_WB, Forward_A, Forward_B  );
+
+  input            RegWrite_EX_MEM, RegWrite_MEM_WB;
+  input      [4:0] Rs_ID_EX, Rt_ID_EX, Rd_EX_MEM, Rd_MEM_WB;
+
+  output reg [1:0] Forward_A, Forward_B;
+
+  always @(*)
+  begin
+
+    // initializations
+    Forward_A = 2'b00; 
+    Forward_B = 2'b00;
+
+    if( RegWrite_EX_MEM && ( Rd_EX_MEM != 5'b0 ) && ( Rd_EX_MEM == Rs_ID_EX ) )
+      Forward_A = 2'b10;
+
+    else if( RegWrite_MEM_WB && ( Rd_MEM_WB != 5'b0 ) && ( Rd_MEM_WB == Rs_ID_EX ) )    
+      Forward_A = 2'b01;   
+
+    if( RegWrite_EX_MEM && ( Rd_EX_MEM != 5'b0 ) && ( Rd_EX_MEM == Rt_ID_EX ) )
+      Forward_B = 2'b10;
+
+    else if( RegWrite_MEM_WB && ( Rd_MEM_WB != 5'b0 ) && ( Rd_MEM_WB == Rt_ID_EX ) )    
+      Forward_B = 2'b01;
         
-    end
+  end
+
 endmodule
