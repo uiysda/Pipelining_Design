@@ -11,6 +11,7 @@ Multiplier,
 Add
 HiLo
 MUX_2to1
+MUX_4
 Multipler
 Reg_File
 Shifter
