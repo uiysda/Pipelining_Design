@@ -12,4 +12,6 @@ Add
 HiLo
 MUX_2to1
 Multipler
+Reg_File
 Shifter
+Sign_Extend
