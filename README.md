@@ -1,7 +1,5 @@
 待測:
 ALU_Control_Unit ;
-Forwarding_Unit ;
-Hazard_Detection_Unit ;
 Mips_Pipelined ;
 
 已測:
@@ -12,6 +10,8 @@ Beq_unit ;
 Control_Unit ;
 EX_MEM ;
 FA ;
+Forwarding_Unit ;
+Hazard_Detection_Unit ;
 HiLo ;
 ID_EX ;
 IF_ID ;
