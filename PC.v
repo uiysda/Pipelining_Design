@@ -36,14 +36,14 @@ module PC ( Clk, Rst, Stall, D_In, D_Out );
 	    if ( !Stall )
       begin
 
-        D_Out <= D_In;
+        D_Out <= D_Out;
 
       end
 
       else
       begin
 
-        D_Out <= D_Out;
+        D_Out <= D_In;
 
       end
 
