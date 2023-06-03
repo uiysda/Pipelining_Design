@@ -13,11 +13,12 @@ MEM_WB
 
 測完了:
 Add
+Beq_unit
 HiLo
 MUX_2to1
-MUX_4
+MUX_4to1
+Memory
 Multipler
 Reg_File
 Shifter
 Sign_Extend
-Beq_unit
