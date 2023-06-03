@@ -1,11 +1,11 @@
 待測:
 ALU ;
-ALU_1bit ;
 ALU_Control_Unit ;
 Forwarding_Unit ;
 Hazard_Detection_Unit ;
 
 已測:
+ALU_1bit ;
 Add ;
 Beq_unit ;
 Control_Unit ;
@@ -17,6 +17,7 @@ IF_ID ;
 MEM_WB ;
 MUX_2to1 ;
 MUX_4to1 ;
+MUX_4to1_1bit ;
 Memory ;
 Multipler ;
 Reg_File ;
