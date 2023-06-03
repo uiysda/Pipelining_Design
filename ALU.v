@@ -1,31 +1,31 @@
 /*
-  ALUOperation : 3 bits operations
-  // add : 000
+  Ctl : 3 bits operations
+  // and : 000
   // or  : 001
   // add : 010
   // sub : 110
-  // slt : 011
-  // srl : 111
+  // slt : 111
+  // srl : 011
 */
 
 `timescale 1ns/1ns
 
-module ALU( ALUOperation , Shamt, DataA, DataB, DataOut ) ;
+module ALU( Ctl , Shamt, DataA, DataB, DataOut ) ;
   
-  input  [2:0]  ALUOperation ;
+  input  [2:0]  Ctl ;
   input  [4:0]  Shamt ;  
   input  [31:0] DataA, DataB ;
   
   output [31:0] DataOut ;
   
-  wire   [31:0] shiftAns, aluAns, sltAns ;
-  wire   [31:0] carry ;
+  wire [31:0] shiftAns, aluAns, sltAns ;
+  wire [31:0] carry ;
   
-  wire   [1:0] sel ;
-  wire         invertB ;
+  wire [1:0] sel ;
+  wire invertB ;
   
-  assign sel     = ALUOperation[1:0] ;
-  assign invertB = ALUOperation[2] ;
+  assign sel = Ctl[1:0] ;
+  assign invertB = Ctl[2] ;
   
   ALU_1bit alu0( .Sel( sel ), .DataA( DataA[0] ), .DataB( DataB[0] ), .InvertB( invertB ), .Cin( invertB ), .DataOut( aluAns[0] ), .Cout( carry[0] ) ) ;
   ALU_1bit alu1( .Sel( sel ), .DataA( DataA[1] ), .DataB( DataB[1] ), .InvertB( invertB ), .Cin( carry[0] ), .DataOut( aluAns[1] ), .Cout( carry[1] ) ) ;
@@ -64,6 +64,6 @@ module ALU( ALUOperation , Shamt, DataA, DataB, DataOut ) ;
   
   assign sltAns = aluAns[31] ? 32'b1 : 32'b0 ;
   
-  assign DataOut = ( ALUOperation == 3'b011 ) ? sltAns : ( ALUOperation == 3'b111 ) ? shiftAns : aluAns ;
+  assign DataOut = ( Ctl == 3'b111 ) ? sltAns : ( Ctl == 3'b011 ) ? shiftAns : aluAns ;
   
 endmodule
