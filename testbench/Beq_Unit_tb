@@ -1,0 +1,53 @@
+`timescale 1ns/1ns
+
+module Beq_Unit_tb;
+
+  reg [5:0] Opcode;
+  reg [31:0] DataA, DataB;
+  wire DataOut;
+
+  Beq_Unit dut (
+    .Opcode(Opcode),
+    .DataA(DataA),
+    .DataB(DataB),
+    .DataOut(DataOut)
+  );
+
+  initial begin
+    // Initialize inputs
+    Opcode = 0;
+    DataA = 0;
+    DataB = 0;
+
+    // Wait for some time for the initial values to stabilize
+    #10;
+
+    // Apply input values
+    Opcode = 3; // BEQ opcode
+    DataA = 100;
+    DataB = 100;
+
+    // Wait for a few clock cycles
+    #10;
+
+    // Display the output value
+    $display("DataOut = %b", DataOut);
+
+    #10;
+
+    // Apply input values
+    Opcode = 4; // BEQ opcode
+    DataA = 50;
+    DataB = 100;
+
+    // Wait for a few clock cycles
+    #10;
+
+    // Display the output value
+    $display("DataOut = %b", DataOut);
+
+    // End the simulation
+    $finish;
+  end
+
+endmodule
