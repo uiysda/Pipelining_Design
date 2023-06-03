@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module TB;
+module Multiplier_TM;
 
   // Inputs
   reg clk;
