@@ -11,4 +11,5 @@ Multiplier,
 Add
 HiLo
 MUX_2to1
+Multipler
 Shifter
