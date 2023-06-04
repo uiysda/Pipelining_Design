@@ -7,7 +7,8 @@ module ID_EX( Clk, Rst, WB_ID, MEM_ID, EX_ID, Rs_ID, Rt_ID, Rd_ID, Shamt_ID, Fun
   input      [1:0]  WB_ID,  MEM_ID;
   input      [3:0]  EX_ID;
   input      [4:0]  Rs_ID, Rt_ID, Rd_ID;
-  input      [5:0]  Shamt_ID, Funct_ID;
+  input      [4:0]  Shamt_ID;
+  input      [5:0]  Funct_ID;
   // ControlUnitOut = {RegDst, ALUOp, ALUSrc, MemRead, MemWrite, RegWrite, MemtoReg}
   input      [31:0] RD1_ID, RD2_ID, Ext_Immed_ID;
 
@@ -16,7 +17,8 @@ module ID_EX( Clk, Rst, WB_ID, MEM_ID, EX_ID, Rs_ID, Rt_ID, Rd_ID, Shamt_ID, Fun
   output reg [1:0]  MEM_EX; // MemRead_EX, MemWrite_EX
   output reg [3:0]  EX_EX; // RegDst_EX, ALUSrc_EX
   output reg [4:0]  Rs_EX, Rt_EX, Rd_EX;
-  output reg [5:0]  Shamt_EX, Funct_EX;
+  output reg [4:0]  Shamt_EX;
+  output reg [5:0]  Funct_EX;
   output reg [31:0] RD1_EX, RD2_EX, Ext_Immed_EX;
   
   always@( posedge Clk )
