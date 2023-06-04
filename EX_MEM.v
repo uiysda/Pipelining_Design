@@ -40,4 +40,3 @@ module EX_MEM ( Clk, Rst, WB_EX, MEM_EX, WN_EX, RD2_EX, DataOut_EX,
 
 endmodule
 	
-
