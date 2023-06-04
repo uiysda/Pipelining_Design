@@ -10,9 +10,9 @@
 
 `timescale 1ns/1ns
 
-module ALU( Ctl , Shamt, DataA, DataB, DataOut ) ;
+module ALU( ALUOperation , Shamt, DataA, DataB, DataOut ) ;
   
-  input  [2:0]  Ctl ;
+  input  [2:0]  ALUOperation ;
   input  [4:0]  Shamt ;  
   input  [31:0] DataA, DataB ;
   
@@ -24,8 +24,8 @@ module ALU( Ctl , Shamt, DataA, DataB, DataOut ) ;
   wire [1:0] sel ;
   wire invertB ;
   
-  assign sel = Ctl[1:0] ;
-  assign invertB = Ctl[2] ;
+  assign sel = ALUOperation[1:0] ;
+  assign invertB = ALUOperation[2] ;
   
   ALU_1bit alu0( .Sel( sel ), .DataA( DataA[0] ), .DataB( DataB[0] ), .InvertB( invertB ), .Cin( invertB ), .DataOut( aluAns[0] ), .Cout( carry[0] ) ) ;
   ALU_1bit alu1( .Sel( sel ), .DataA( DataA[1] ), .DataB( DataB[1] ), .InvertB( invertB ), .Cin( carry[0] ), .DataOut( aluAns[1] ), .Cout( carry[1] ) ) ;
