@@ -23,7 +23,8 @@ module Mips_Pipelined( clk, rst );
                 	pc, pc_incr, pc_add, dmem_rdata, dmem_rdata_out, jump_addr, branch_addr;
 
 	// control signals
-        wire Branch, PCSrc, Zero, Jump, Multu, ExtendSel;
+        wire Branch, PCSrc, Zero, Jump, ExtendSel;
+        wire [5:0] Multu;
 		wire [7:0] ControlUnitOut, EX_MEM_WB;
 		wire [1:0] ALU_Out_Sel;
         wire [2:0] Operation;
@@ -55,7 +56,7 @@ module Mips_Pipelined( clk, rst );
 		wire stall;
 
 	// forwarding signals
-		wire forwardingA, forwardingB;
+		wire [1:0] forwardingA, forwardingB;
 	  
 	// module instantiations
 		PC PC( .Clk(clk), .Rst(rst), .Stall(stall), .D_In(pc_next), .D_Out(pc) );  
@@ -74,7 +75,7 @@ module Mips_Pipelined( clk, rst );
 	
 		MUX_2to1 #(32) WriteToRegMUX( .Sel(WB_reg_3[1]), .DataIn0(ADDR_out), .DataIn1(dmem_rdata_out), .DataOut(rfile_wd) );
 	
-		MUX_2to1 #(32) HazardMUX( .Sel(stall), .DataIn0(ControlUnitOut), .DataIn1(1'b0), .DataOut(EX_MEM_WB) );
+		MUX_2to1 #(8) HazardMUX( .Sel(stall), .DataIn0(ControlUnitOut), .DataIn1(8'b0), .DataOut(EX_MEM_WB) );
 
 		MUX_4to1 #(32) OUTMUX( .Sel(ALU_Out_Sel), .DataIn0(alu_ans), .DataIn1(HiOut), .DataIn2(LoOut), .DataIn3(32'b0), .DataOut(alu_mux_result) );
 	
@@ -92,7 +93,7 @@ module Mips_Pipelined( clk, rst );
 	
 		Memory DatMem( .Clk(clk), .MemRead(MEM_reg_2[0]), .MemWrite(MEM_reg_2[1]), .Wd(rd2ToWD), .Addr(aluToADDR), .Rd(dmem_rdata) );	 
 	
-		Hazard_Detection_Unit( .Clk(clk), .MemRead_EX(MEM_reg_1[0]), .Rs_ID(rs), .Rt_ID(rt), .Rt_EX(rt_out), .Stall(stall) );
+		Hazard_Detection_Unit HDU( .Clk(clk), .MemRead_EX(MEM_reg_1[0]), .Rs_ID(rs), .Rt_ID(rt), .Rt_EX(rt_out), .Stall(stall) );
 
 		Forwarding_Unit Forwarding_Unit( .Clk(clk), .RegWrite_EX_MEM(WB_reg_2[0]), .RegWrite_MEM_WB(WB_reg_3[0]), .Rs_ID_EX(rs_out), .Rt_ID_EX(rt_out), .Rd_EX_MEM(wn_1), .Rd_MEM_WB(wn_2), .Forward_A(forwardingA), .Forward_B(forwardingB)  );
 
