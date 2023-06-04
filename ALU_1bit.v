@@ -21,4 +21,3 @@ module ALU_1bit( Sel, DataA, DataB, InvertB, Cin, DataOut, Cout ) ;
   MUX_4to1 #(1) selectResult( .Sel( Sel ), .DataIn0( and00 ), .DataIn1( or01 ), .DataIn2( add_sub10 ), .DataIn3( add_sub10 ), .DataOut( DataOut ) ) ;
   
 endmodule
-
